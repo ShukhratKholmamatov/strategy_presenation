@@ -48,6 +48,26 @@ quarterTabs.forEach(tab => {
     });
 });
 
+// ===== Category tabs =====
+const categoryTabs = document.querySelectorAll('.category-tab');
+const categoryContents = document.querySelectorAll('.category-content');
+
+categoryTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = tab.dataset.category;
+
+        categoryTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        categoryContents.forEach(content => {
+            content.classList.remove('active');
+            if (content.id === 'cat-' + target) {
+                content.classList.add('active');
+            }
+        });
+    });
+});
+
 // ===== Intersection Observer for scroll animations =====
 const observerOptions = {
     threshold: 0.1,
