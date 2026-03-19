@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"Add-Type -AssemblyName System.IO.Compression.FileSystem; try { [System.IO.Compression.ZipFile]::OpenRead\\(''c:\\\\Users\\\\s.xolmamatov\\\\Documents\\\\GitHub\\\\strategy_presenation\\\\sources\\\\bulletin.rar''\\) } catch { Write-Host ''Not a zip'' }\")",
+      "Bash(where unrar:*)",
+      "Bash(where rar:*)",
+      "Bash(powershell -Command \"& ''C:\\\\Program Files\\\\WinRAR\\\\UnRAR.exe'' l ''c:\\\\Users\\\\s.xolmamatov\\\\Documents\\\\GitHub\\\\strategy_presenation\\\\sources\\\\bulletin.rar''\")",
+      "Bash(powershell -Command \"& ''C:\\\\Program Files\\\\WinRAR\\\\rar.exe'' l ''c:\\\\Users\\\\s.xolmamatov\\\\Documents\\\\GitHub\\\\strategy_presenation\\\\sources\\\\bulletin.rar''\")",
+      "Bash(powershell -Command \"& ''C:\\\\Program Files \\(x86\\)\\\\WinRAR\\\\UnRAR.exe'' l ''c:\\\\Users\\\\s.xolmamatov\\\\Documents\\\\GitHub\\\\strategy_presenation\\\\sources\\\\bulletin.rar''\")",
+      "Bash(powershell -Command \"& ''C:\\\\Program Files\\\\WinRAR\\\\UnRAR.exe'' x -o+ ''c:\\\\Users\\\\s.xolmamatov\\\\Documents\\\\GitHub\\\\strategy_presenation\\\\sources\\\\bulletin.rar'' ''c:\\\\Users\\\\s.xolmamatov\\\\Documents\\\\GitHub\\\\strategy_presenation\\\\sources\\\\''\")"
+    ]
+  }
+}
