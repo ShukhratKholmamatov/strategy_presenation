@@ -30,6 +30,77 @@
             --gray-900: #111827;
         }
 
+        /* ===== NAV (matching index.html) ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .nav.scrolled { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05); }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--gray-900);
+        }
+
+        .logo-icon svg { width: 36px; height: 36px; }
+
+        .nav-divider {
+            color: var(--gray-300);
+            font-weight: 300;
+            margin: 0 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 4px;
+            background: var(--gray-100);
+            padding: 4px;
+            border-radius: 12px;
+        }
+
+        .nav-link {
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray-600);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover { color: var(--gray-900); }
+
+        .nav-link.active {
+            background: var(--white);
+            color: var(--green-600);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            font-weight: 600;
+        }
+
         html { font-size: 16px; scroll-behavior: smooth; }
 
         body {
@@ -618,7 +689,9 @@
             }
 
             .slides-nav,
-            .print-btn {
+            .print-btn,
+            .nav,
+            div[style*="height:64px"] {
                 display: none !important;
             }
 
@@ -718,6 +791,28 @@
     </style>
 </head>
 <body>
+
+<!-- Navigation (same as index.html) -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <div class="nav-logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 40 40" fill="none">
+                    <rect width="40" height="40" rx="8" fill="#4CAF50"/>
+                    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="11" font-weight="800" font-family="Inter, sans-serif">ITP</text>
+                </svg>
+            </div>
+            <span>IT Park <span class="nav-divider">|</span> Стратегия ва таҳлил</span>
+        </div>
+        <div class="nav-links">
+            <a href="slides.html" class="nav-link active">Слайдлар</a>
+            <a href="index.html#plan" class="nav-link">2026 Иш режаси</a>
+            <a href="index.html#q1" class="nav-link">I чорак натижалари</a>
+        </div>
+    </div>
+</nav>
+
+<div style="height:64px;"></div>
 
 <!-- Print / Download PDF Button -->
 <button class="print-btn" onclick="window.print()">
@@ -1087,6 +1182,12 @@
 </div>
 
 <script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
 // Highlight active slide in nav
 const slideNav = document.querySelectorAll('.slides-nav a');
 const slides = document.querySelectorAll('.slide');
