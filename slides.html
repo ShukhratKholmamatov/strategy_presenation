@@ -16,6 +16,9 @@
             --green-700: #2d6930;
             --green-50: #f0fdf0;
             --green-100: #dcfce7;
+            --green-200: #bbf7d0;
+            --green-300: #86efac;
+            --green-400: #4ade80;
             --lime: #c6f06b;
             --white: #ffffff;
             --gray-50: #f9fafb;
@@ -170,262 +173,203 @@
             padding: 32px 48px 40px;
         }
 
-        /* ===== SLIDE 1: STRUCTURE ===== */
-        .dept-title-block {
-            text-align: center;
-            margin-bottom: 28px;
+        /* ===== SLIDE 1: ORG CHART ===== */
+        .org-chart {
+            background: var(--gray-50);
+            border-radius: 14px;
+            padding: 28px 28px 24px;
+            border: 1px solid var(--gray-200);
         }
 
-        .dept-title-block h2 {
+        .org-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .org-title h2 {
+            color: var(--white);
             font-size: 18px;
             font-weight: 700;
-            color: var(--gray-800);
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
-        .dept-title-block p {
-            font-size: 13px;
-            color: var(--gray-500);
-        }
-
-        /* Management row */
-        .management-row {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 24px;
-        }
-
-        .person-card {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--white);
-            border: 2px solid var(--green-500);
-            border-radius: 12px;
-            padding: 12px 18px;
-            min-width: 280px;
-        }
-
-        .person-card.head {
-            border-color: var(--green-500);
-            background: var(--green-50);
-        }
-
-        .person-card.dept-head {
-            border-color: var(--green-400);
-            background: var(--white);
-            border-width: 1.5px;
-        }
-
-        .person-photo {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--green-200);
-            flex-shrink: 0;
-        }
-
-        .person-photo-placeholder {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: var(--green-100);
-            border: 2px solid var(--green-200);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 16px;
-            color: var(--green-600);
-            flex-shrink: 0;
-        }
-
-        .person-info h4 {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--gray-800);
-            line-height: 1.3;
-        }
-
-        .person-info span {
-            font-size: 11px;
-            color: var(--gray-500);
-            font-weight: 500;
-        }
-
-        /* Divisions */
-        .divisions-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        .division-block {
-            background: var(--gray-50);
-            border-radius: 12px;
-            padding: 20px;
-            border: 1px solid var(--gray-200);
-        }
-
-        .division-block h3 {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--green-700);
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .division-block h3 .div-icon {
-            width: 24px;
-            height: 24px;
-            background: var(--green-500);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .division-block h3 .div-icon svg {
-            width: 14px;
-            height: 14px;
-            stroke: white;
-        }
-
-        .division-block .div-desc {
-            font-size: 11.5px;
-            color: var(--gray-500);
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-
-        .team-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .team-member {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 6px 10px;
-            background: var(--white);
-            border-radius: 8px;
-            border: 1px solid var(--gray-200);
-        }
-
-        .team-member img,
-        .team-member .mini-placeholder {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-
-        .team-member .mini-placeholder {
-            background: var(--green-100);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--green-600);
-        }
-
-        .team-member-info h5 {
-            font-size: 12.5px;
-            font-weight: 600;
-            color: var(--gray-800);
-        }
-
-        .team-member-info span {
-            font-size: 10.5px;
+        .org-title p {
             color: var(--gray-400);
-        }
-
-        /* Functions block */
-        .functions-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-top: 20px;
-        }
-
-        .func-block {
-            background: var(--green-50);
-            border-radius: 10px;
-            padding: 14px 18px;
-            border: 1px solid var(--green-100);
-        }
-
-        .func-block h4 {
             font-size: 12px;
-            font-weight: 700;
-            color: var(--green-700);
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        .func-block ul {
+        /* Top management row: 3 cards */
+        .org-top-row {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 16px;
+            align-items: start;
+            margin-bottom: 20px;
+        }
+
+        .org-card {
+            background: var(--white);
+            border: 2.5px solid var(--green-500);
+            border-radius: 14px;
+            padding: 14px 16px;
+            text-align: center;
+        }
+
+        .org-card.head {
+            border-width: 3px;
+            border-color: var(--green-400);
+        }
+
+        .org-card .org-photo {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--green-200);
+            margin: 0 auto 8px;
+            display: block;
+        }
+
+        .org-card .org-name {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 2px;
+        }
+
+        .org-card .org-role {
+            font-size: 10.5px;
+            color: var(--green-700);
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .org-card .org-duties {
             list-style: none;
             padding: 0;
+            text-align: left;
         }
 
-        .func-block ul li {
-            font-size: 11.5px;
+        .org-card .org-duties li {
+            font-size: 10px;
             color: var(--gray-600);
-            padding: 3px 0;
-            padding-left: 14px;
+            padding: 2px 0 2px 12px;
             position: relative;
             line-height: 1.5;
         }
 
-        .func-block ul li::before {
-            content: '';
+        .org-card .org-duties li::before {
+            content: '–';
             position: absolute;
             left: 0;
-            top: 10px;
-            width: 6px;
-            height: 6px;
-            background: var(--green-500);
-            border-radius: 50%;
+            color: var(--green-500);
+            font-weight: 700;
         }
 
-        /* Stats bar */
-        .stats-bar {
+        /* Section divider */
+        .org-section-divider {
             display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
         }
 
-        .stat-item {
+        .org-section-divider .line {
+            flex: 1;
+            height: 1px;
+            background: var(--gray-300);
+        }
+
+        .org-section-divider span {
+            color: var(--green-700);
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
+            background: var(--green-100);
+            padding: 4px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--green-200);
+        }
+
+        /* Staff sections */
+        .org-staff-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .org-staff-group-label {
             text-align: center;
-            padding: 8px 16px;
-            background: var(--green-50);
-            border-radius: 10px;
-            border: 1px solid var(--green-100);
+            margin-bottom: 10px;
         }
 
-        .stat-item .stat-num {
-            font-size: 22px;
-            font-weight: 800;
+        .org-staff-group-label span {
+            font-size: 11px;
+            font-weight: 700;
             color: var(--green-600);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .stat-item .stat-label {
-            font-size: 10px;
+        .org-staff-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .org-staff-card {
+            background: var(--white);
+            border: 2px solid var(--green-500);
+            border-radius: 12px;
+            padding: 12px 10px;
+            text-align: center;
+        }
+
+        .org-staff-card .org-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--green-200);
+            margin: 0 auto 6px;
+            display: block;
+        }
+
+        .org-staff-card .org-name {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1px;
+        }
+
+        .org-staff-card .org-role {
+            font-size: 9.5px;
             color: var(--gray-500);
             font-weight: 500;
-            display: block;
-            margin-top: 2px;
+            margin-bottom: 6px;
+        }
+
+        .org-staff-card .org-duties {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .org-staff-card .org-duties li {
+            font-size: 9px;
+            color: var(--gray-600);
+            padding: 1.5px 0 1.5px 10px;
+            position: relative;
+            line-height: 1.45;
+        }
+
+        .org-staff-card .org-duties li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--green-500);
+            font-weight: 700;
         }
 
         /* ===== SLIDE 2: KPI ===== */
@@ -544,6 +488,36 @@
         .status-badge.progress { background: #fef3c7; color: #92400e; }
         .status-badge.planned { background: var(--gray-100); color: var(--gray-500); }
 
+        .q1-results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .q1-result-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 14px;
+            background: var(--gray-50);
+            border-radius: 8px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .q1-result-item .q1-num {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--green-600);
+            min-width: 40px;
+        }
+
+        .q1-result-item .q1-text {
+            font-size: 11.5px;
+            color: var(--gray-600);
+            line-height: 1.4;
+        }
+
         /* ===== SLIDE 3: OPEN QUESTIONS ===== */
         .issues-grid {
             display: grid;
@@ -654,6 +628,35 @@
 
         .print-btn svg { flex-shrink: 0; }
 
+        /* Nav between slides */
+        .slides-nav {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .slides-nav a {
+            width: 40px;
+            height: 40px;
+            background: var(--green-500);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
+        }
+
+        .slides-nav a:hover { transform: scale(1.1); }
+        .slides-nav a.active { background: var(--green-700); }
+
         /* Print styles */
         @media print {
             body {
@@ -695,19 +698,18 @@
                 display: none !important;
             }
 
-            .person-photo, .team-member img {
+            .org-chart, .org-card, .org-staff-card,
+            .kpi-card, .kpi-bar-fill,
+            .issue-section, .q1-result-item,
+            .status-badge, .projects-table th,
+            .projects-table tr:nth-child(even) td,
+            .org-section-divider span {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
 
-            .stat-item, .func-block, .division-block, .kpi-card,
-            .issue-section, .q1-result-item, .team-member,
-            .status-badge, .kpi-bar-fill, .person-card {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .projects-table th, .projects-table tr:nth-child(even) td {
+            .org-card .org-photo,
+            .org-staff-card .org-photo {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -716,77 +718,6 @@
         @page {
             size: A4 landscape;
             margin: 0;
-        }
-
-        /* Nav between slides */
-        .slides-nav {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            display: flex;
-            gap: 8px;
-            z-index: 100;
-        }
-
-        .slides-nav a {
-            width: 40px;
-            height: 40px;
-            background: var(--green-500);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.2s;
-        }
-
-        .slides-nav a:hover { transform: scale(1.1); }
-        .slides-nav a.active { background: var(--green-700); }
-
-        .connector-line {
-            display: flex;
-            justify-content: center;
-            margin: -4px 0 8px;
-        }
-
-        .connector-line .line {
-            width: 2px;
-            height: 20px;
-            background: var(--green-300);
-        }
-
-        .q1-results-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .q1-result-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 14px;
-            background: var(--gray-50);
-            border-radius: 8px;
-            border: 1px solid var(--gray-200);
-        }
-
-        .q1-result-item .q1-num {
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--green-600);
-            min-width: 40px;
-        }
-
-        .q1-result-item .q1-text {
-            font-size: 11.5px;
-            color: var(--gray-600);
-            line-height: 1.4;
         }
     </style>
 </head>
@@ -828,7 +759,7 @@
 </div>
 
 <!-- ================================================================ -->
-<!-- SLIDE 1: ОБЩАЯ ИНФОРМАЦИЯ -->
+<!-- SLIDE 1: ОБЩАЯ ИНФОРМАЦИЯ — ORG CHART -->
 <!-- ================================================================ -->
 <div class="slide" id="slide1">
     <div class="slide-header">
@@ -839,163 +770,146 @@
         <div class="slide-badge">IT Park Uzbekistan</div>
     </div>
 
-    <div class="slide-body">
-        <!-- Department name & stats -->
-        <div class="dept-title-block">
-            <h2>Управление свода информации и анализа</h2>
-            <p>Структура, функции и команда</p>
-        </div>
-
-        <div class="stats-bar">
-            <div class="stat-item">
-                <span class="stat-num">9</span>
-                <span class="stat-label">Сотрудников</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">2</span>
-                <span class="stat-label">Отдела</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">3</span>
-                <span class="stat-label">Руководителя</span>
-            </div>
-        </div>
-
-        <!-- Management -->
-        <div class="management-row">
-            <div class="person-card head">
-                <img src="sources/islam.png" alt="Исмоилов Ислом" class="person-photo">
-                <div class="person-info">
-                    <h4>Исмоилов Ислом</h4>
-                    <span>Начальник Управления</span>
+    <div class="slide-body" style="padding: 20px 32px 24px;">
+        <div class="org-chart">
+            <!-- Top row: Head + 2 Dept Heads -->
+            <div class="org-top-row">
+                <!-- Left: Иргашев Ботир -->
+                <div class="org-card">
+                    <img src="sources/botir.png" alt="Иргашев Ботир" class="org-photo">
+                    <div class="org-name">Иргашев Ботир</div>
+                    <div class="org-role">Начальник отдела свода информации,<br>зам. начальника Управления</div>
+                    <ul class="org-duties">
+                        <li>координация деятельности отдела</li>
+                        <li>ответственен за исполнение всех KPI отдела</li>
+                        <li>представление ежемесячной (12) и квартальной (4) сводной информации</li>
+                        <li>информационное сопровождение руководства</li>
+                    </ul>
                 </div>
-            </div>
-        </div>
 
-        <div class="connector-line"><div class="line"></div></div>
+                <!-- Center: Исмоилов Ислом -->
+                <div class="org-card head">
+                    <img src="sources/islam.png" alt="Исмоилов Ислом" class="org-photo">
+                    <div class="org-name">Исмоилов Ислом</div>
+                    <div class="org-role">Начальник Управления</div>
+                    <ul class="org-duties">
+                        <li>координация деятельности отделов</li>
+                        <li>ответственен за исполнение всех KPI Управления</li>
+                    </ul>
+                </div>
 
-        <!-- Divisions -->
-        <div class="divisions-grid">
-            <!-- Division 1: Strategy & Analysis -->
-            <div class="division-block">
-                <h3>
-                    <span class="div-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                    </span>
-                    Отдел стратегии и анализа (6)
-                </h3>
-                <div class="div-desc">Стратегические направления, сравнительный анализ, рекомендации, мониторинг международных индексов, страновая информация</div>
-
-                <!-- Head -->
-                <div class="team-list">
-                    <div class="team-member" style="border-color: var(--green-300); background: var(--green-50);">
-                        <img src="sources/baxodir.png" alt="Эргашев Боходир" style="width:34px;height:34px;border-radius:50%;object-fit:cover;">
-                        <div class="team-member-info">
-                            <h5>Эргашев Боходир</h5>
-                            <span>Начальник отдела</span>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="sources/axmad.png" alt="Ибрагимов Ахмад" style="width:34px;height:34px;border-radius:50%;object-fit:cover;">
-                        <div class="team-member-info">
-                            <h5>Ибрагимов Ахмад</h5>
-                            <span>Главный специалист</span>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="sources/elyor.png" alt="Шухратов Эльёрбек" style="width:34px;height:34px;border-radius:50%;object-fit:cover;">
-                        <div class="team-member-info">
-                            <h5>Шухратов Эльёрбек</h5>
-                            <span>Ведущий специалист</span>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="sources/shuxrat.png" alt="Холмаматов Шухрат" style="width:34px;height:34px;border-radius:50%;object-fit:cover;">
-                        <div class="team-member-info">
-                            <h5>Холмаматов Шухрат</h5>
-                            <span>Ведущий специалист</span>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="sources/shoxrux.png" alt="Сулейманов Шохрух" style="width:34px;height:34px;border-radius:50%;object-fit:cover;">
-                        <div class="team-member-info">
-                            <h5>Сулейманов Шохрух</h5>
-                            <span>Ведущий специалист</span>
-                        </div>
-                    </div>
+                <!-- Right: Эргашев Боходир -->
+                <div class="org-card">
+                    <img src="sources/baxodir.png" alt="Эргашев Боходир" class="org-photo">
+                    <div class="org-name">Эргашев Боходир</div>
+                    <div class="org-role">Начальник отдела стратегии и анализа</div>
+                    <ul class="org-duties">
+                        <li>24 аналитических записки (с отчётами) подготовка</li>
+                        <li>координация деятельности отдела</li>
+                        <li>ответственен за исполнение KPI Отдела</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Division 2: Information Consolidation -->
-            <div class="division-block">
-                <h3>
-                    <span class="div-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    </span>
-                    Отдел свода информации (5)
-                </h3>
-                <div class="div-desc">Сбор, систематизация и анализ информации от 16 подразделений IT Park, подготовка ежемесячных и квартальных сводных отчётов</div>
-
-                <!-- Head -->
-                <div class="team-list">
-                    <div class="team-member" style="border-color: var(--green-300); background: var(--green-50);">
-                        <img src="sources/botir.png" alt="Иргашев Ботир" style="width:34px;height:34px;border-radius:50%;object-fit:cover;">
-                        <div class="team-member-info">
-                            <h5>Иргашев Ботир</h5>
-                            <span>Начальник отдела</span>
-                        </div>
+            <!-- Two sections side by side -->
+            <div class="org-staff-sections">
+                <!-- LEFT: Отдел свода информации -->
+                <div>
+                    <div class="org-section-divider">
+                        <div class="line"></div>
+                        <span>Отдел свода информации</span>
+                        <div class="line"></div>
                     </div>
-                    <div class="team-member">
-                        <img src="sources/sherzod.png" alt="Муминов Шерзод" style="width:34px;height:34px;border-radius:50%;object-fit:cover;">
-                        <div class="team-member-info">
-                            <h5>Муминов Шерзод</h5>
-                            <span>Главный специалист</span>
+                    <div class="org-staff-grid">
+                        <div class="org-staff-card">
+                            <img src="sources/sherzod.png" alt="Муминов Шерзод" class="org-photo">
+                            <div class="org-name">Муминов Шерзод</div>
+                            <div class="org-role">Главный специалист</div>
+                            <ul class="org-duties">
+                                <li>свод данных от 16 подразделений IT Park</li>
+                                <li>ежемесячные и квартальные сводные отчёты</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="sources/azamat.png" alt="Рахимбоев Азамат" style="width:34px;height:34px;border-radius:50%;object-fit:cover;">
-                        <div class="team-member-info">
-                            <h5>Рахимбоев Азамат</h5>
-                            <span>Ведущий специалист</span>
+                        <div class="org-staff-card">
+                            <img src="sources/azamat.png" alt="Рахимбоев Азамат" class="org-photo">
+                            <div class="org-name">Рахимбоев Азамат</div>
+                            <div class="org-role">Ведущий специалист</div>
+                            <ul class="org-duties">
+                                <li>свод данных от 16 подразделений IT Park</li>
+                                <li>ежемесячные и квартальные сводные отчёты</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="sources/nazerke.png" alt="Женисбекова Назерке" style="width:34px;height:34px;border-radius:50%;object-fit:cover;">
-                        <div class="team-member-info">
-                            <h5>Женисбекова Назерке</h5>
-                            <span>Ведущий специалист</span>
+                        <div class="org-staff-card">
+                            <img src="sources/otabek.JPG" alt="Давронбеков Отабек" class="org-photo">
+                            <div class="org-name">Давронбеков Отабек</div>
+                            <div class="org-role">Ведущий специалист</div>
+                            <ul class="org-duties">
+                                <li>единый банк данных: систематизация и формирование</li>
+                                <li>международные рейтинги и индексы</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="sources/otabek.JPG" alt="Давронбеков Отабек" style="width:34px;height:34px;border-radius:50%;object-fit:cover;">
-                        <div class="team-member-info">
-                            <h5>Давронбеков Отабек</h5>
-                            <span>Ведущий специалист</span>
+                        <div class="org-staff-card">
+                            <img src="sources/nazerke.png" alt="Женисбекова Назерке" class="org-photo">
+                            <div class="org-name">Женисбекова Назерке</div>
+                            <div class="org-role">Ведущий специалист</div>
+                            <ul class="org-duties">
+                                <li>подборка информации РУз по требованиям анализа</li>
+                                <li>данные рекомендациям международных организаций</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Key Functions -->
-        <div class="functions-row">
-            <div class="func-block">
-                <h4>Основные функции</h4>
-                <ul>
-                    <li>Стратегический анализ и подготовка рекомендаций для руководства</li>
-                    <li>Мониторинг международных индексов (GII, EGDI, и др.)</li>
-                    <li>Подготовка информационно-аналитических справок и бюллетеней</li>
-                    <li>Формирование страновых баз данных (24 индикатора по 75 странам)</li>
-                </ul>
-            </div>
-            <div class="func-block">
-                <h4>Зона ответственности</h4>
-                <ul>
-                    <li>Свод и систематизация данных от 16 структурных подразделений</li>
-                    <li>Ежемесячные (12) и квартальные (4) сводные отчёты IT Park</li>
-                    <li>Информационное обеспечение международных визитов и переговоров</li>
-                    <li>Разработка цифровых решений для оптимизации внутренних процессов</li>
-                </ul>
+                <!-- RIGHT: Отдел стратегии и анализа -->
+                <div>
+                    <div class="org-section-divider">
+                        <div class="line"></div>
+                        <span>Отдел стратегии и анализа</span>
+                        <div class="line"></div>
+                    </div>
+                    <div class="org-staff-grid">
+                        <div class="org-staff-card">
+                            <img src="sources/axmad.png" alt="Ибрагимов Ахмад" class="org-photo">
+                            <div class="org-name">Ибрагимов Ахмад</div>
+                            <div class="org-role">Главный специалист</div>
+                            <ul class="org-duties">
+                                <li>24 ИАЗ по IT (текущее состояние, деятельность гос. сектора, экспорт)</li>
+                                <li>20 справок по межд. отчетам</li>
+                                <li>1 проект по коммерциализации</li>
+                            </ul>
+                        </div>
+                        <div class="org-staff-card">
+                            <img src="sources/elyor.png" alt="Шухратов Эльёрбек" class="org-photo">
+                            <div class="org-name">Шухратов Эльёрбек</div>
+                            <div class="org-role">Ведущий специалист</div>
+                            <ul class="org-duties">
+                                <li>52 подборки новостей, анализ IT сектора (бюллетень)</li>
+                                <li>обновление базы страновой информации (12 инд. по 75 странам)</li>
+                                <li>20 страновых справок</li>
+                            </ul>
+                        </div>
+                        <div class="org-staff-card">
+                            <img src="sources/shuxrat.png" alt="Холмаматов Шухрат" class="org-photo">
+                            <div class="org-name">Холмаматов Шухрат</div>
+                            <div class="org-role">Ведущий специалист</div>
+                            <ul class="org-duties">
+                                <li>5 технических и эксплуатационных документаций</li>
+                                <li>4 цифровых решения для работы с резидентами</li>
+                                <li>стратегия цифровизации и оптимизации</li>
+                            </ul>
+                        </div>
+                        <div class="org-staff-card">
+                            <img src="sources/shoxrux.png" alt="Сулейманов Шохрух" class="org-photo">
+                            <div class="org-name">Сулейманов Шохрух</div>
+                            <div class="org-role">Ведущий специалист</div>
+                            <ul class="org-duties">
+                                <li>5 технических и эксплуатационных документаций</li>
+                                <li>4 цифровых решения по обмену информацией между отделами</li>
+                                <li>1 проект по коммерциализации</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1043,12 +957,12 @@
             </div>
         </div>
 
-        <!-- KPI on 2026 and Q2 -->
+        <!-- KPI on 2026 -->
         <div class="kpi-section-title">KPI на 2026 год</div>
         <table class="projects-table">
             <thead>
                 <tr>
-                    <th style="width: 5%;">№</th>
+                    <th style="width: 5%;">&#8470;</th>
                     <th style="width: 40%;">Направление / Проект</th>
                     <th style="width: 20%;">Целевой срок</th>
                     <th style="width: 25%;">Ожидаемый результат</th>
