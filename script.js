@@ -1,3 +1,24 @@
+// ===== Language toggle =====
+function setLang(lang) {
+    document.body.classList.remove('lang-uz', 'lang-ru');
+    document.body.classList.add('lang-' + lang);
+    localStorage.setItem('lang', lang);
+    document.getElementById('lang-uz-btn').classList.toggle('active', lang === 'uz');
+    document.getElementById('lang-ru-btn').classList.toggle('active', lang === 'ru');
+}
+
+// Apply saved language on load
+(function() {
+    const saved = localStorage.getItem('lang') || 'uz';
+    document.body.classList.add('lang-' + saved);
+    document.addEventListener('DOMContentLoaded', function() {
+        const uzBtn = document.getElementById('lang-uz-btn');
+        const ruBtn = document.getElementById('lang-ru-btn');
+        if (uzBtn) uzBtn.classList.toggle('active', saved === 'uz');
+        if (ruBtn) ruBtn.classList.toggle('active', saved === 'ru');
+    });
+})();
+
 // ===== Navigation scroll effect =====
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -13,10 +34,10 @@ function updateActiveNav() {
 
     if (scrollY < document.getElementById('q1').offsetTop) {
         navLinks.forEach(l => l.classList.remove('active'));
-        navLinks[0].classList.add('active');
+        navLinks[1].classList.add('active');
     } else {
         navLinks.forEach(l => l.classList.remove('active'));
-        navLinks[1].classList.add('active');
+        navLinks[2].classList.add('active');
     }
 }
 

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Управление свода информации и анализа — Презентация 2026</title>
+    <title>Ахборотларни умумлаштириш ва таҳлил бошқармаси — Презентация 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -32,6 +32,10 @@
             --gray-800: #1f2937;
             --gray-900: #111827;
         }
+
+        /* ===== LANGUAGE TOGGLE ===== */
+        body.lang-uz .lang-ru { display: none; }
+        body.lang-ru .lang-uz { display: none; }
 
         /* ===== NAV (matching index.html) ===== */
         .nav {
@@ -104,6 +108,45 @@
             font-weight: 600;
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            background: var(--gray-100);
+            border-radius: 8px;
+            padding: 4px;
+            gap: 2px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .lang-toggle button {
+            padding: 5px 12px;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: transparent;
+            color: var(--gray-500);
+        }
+
+        .lang-toggle button.active {
+            background: var(--white);
+            color: var(--green-600);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+        }
+
+        .lang-toggle button:hover:not(.active) {
+            color: var(--gray-700);
+        }
+
         html { font-size: 16px; scroll-behavior: smooth; }
 
         body {
@@ -173,7 +216,7 @@
             padding: 32px 48px 40px;
         }
 
-        /* ===== SLIDE 1: ORG CHART ===== */
+        /* ===== SLIDE 1: ORG CHART (LIGHT BACKGROUND) ===== */
         .org-chart {
             background: var(--gray-50);
             border-radius: 14px;
@@ -187,7 +230,7 @@
         }
 
         .org-title h2 {
-            color: var(--white);
+            color: var(--gray-800);
             font-size: 18px;
             font-weight: 700;
             margin-bottom: 4px;
@@ -198,31 +241,108 @@
             font-size: 12px;
         }
 
-        /* Top management row: 3 cards */
-        .org-top-row {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: 16px;
-            align-items: start;
-            margin-bottom: 20px;
+        /* Head card (top level - Исмоилов) */
+        .org-head-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 24px;
         }
 
-        .org-card {
+        .org-card-head {
             background: var(--white);
-            border: 2.5px solid var(--green-500);
-            border-radius: 14px;
-            padding: 14px 16px;
+            border: 3px solid var(--green-500);
+            border-radius: 16px;
+            padding: 18px 28px;
             text-align: center;
+            min-width: 320px;
+            box-shadow: 0 4px 16px rgba(76,175,80,0.12);
         }
 
-        .org-card.head {
-            border-width: 3px;
-            border-color: var(--green-400);
+        .org-card-head .org-photo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--green-200);
+            margin: 0 auto 10px;
+            display: block;
         }
 
-        .org-card .org-photo {
-            width: 64px;
-            height: 64px;
+        .org-card-head .org-name {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 2px;
+        }
+
+        .org-card-head .org-role {
+            font-size: 12px;
+            color: var(--green-700);
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .org-card-head .org-duties {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .org-card-head .org-duties li {
+            font-size: 11px;
+            color: var(--gray-600);
+            padding: 2px 0 2px 14px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .org-card-head .org-duties li::before {
+            content: '\2013';
+            position: absolute;
+            left: 0;
+            color: var(--green-500);
+            font-weight: 700;
+        }
+
+        /* Connector line from head to divisions */
+        .org-connector {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .org-connector-line {
+            width: 2px;
+            height: 20px;
+            background: var(--green-300);
+        }
+
+        /* Division columns */
+        .org-divisions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .org-division {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 16px;
+            border: 1px solid var(--gray-200);
+        }
+
+        /* Division head card */
+        .org-div-head {
+            text-align: center;
+            padding-bottom: 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid var(--green-100);
+        }
+
+        .org-div-head .org-photo {
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--green-200);
@@ -230,14 +350,14 @@
             display: block;
         }
 
-        .org-card .org-name {
-            font-size: 13.5px;
+        .org-div-head .org-name {
+            font-size: 14px;
             font-weight: 700;
             color: var(--gray-900);
             margin-bottom: 2px;
         }
 
-        .org-card .org-role {
+        .org-div-head .org-role {
             font-size: 10.5px;
             color: var(--green-700);
             font-weight: 600;
@@ -245,13 +365,13 @@
             line-height: 1.4;
         }
 
-        .org-card .org-duties {
+        .org-div-head .org-duties {
             list-style: none;
             padding: 0;
             text-align: left;
         }
 
-        .org-card .org-duties li {
+        .org-div-head .org-duties li {
             font-size: 10px;
             color: var(--gray-600);
             padding: 2px 0 2px 12px;
@@ -259,8 +379,8 @@
             line-height: 1.5;
         }
 
-        .org-card .org-duties li::before {
-            content: '–';
+        .org-div-head .org-duties li::before {
+            content: '\2013';
             position: absolute;
             left: 0;
             color: var(--green-500);
@@ -272,7 +392,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .org-section-divider .line {
@@ -283,35 +403,16 @@
 
         .org-section-divider span {
             color: var(--green-700);
-            font-size: 13px;
+            font-size: 11px;
             font-weight: 700;
             white-space: nowrap;
             background: var(--green-100);
-            padding: 4px 16px;
+            padding: 3px 12px;
             border-radius: 6px;
             border: 1px solid var(--green-200);
         }
 
-        /* Staff sections */
-        .org-staff-sections {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .org-staff-group-label {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .org-staff-group-label span {
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--green-600);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
+        /* Staff grid (2x2 under each division head) */
         .org-staff-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -327,8 +428,8 @@
         }
 
         .org-staff-card .org-photo {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--green-200);
@@ -365,7 +466,7 @@
         }
 
         .org-staff-card .org-duties li::before {
-            content: '–';
+            content: '\2013';
             position: absolute;
             left: 0;
             color: var(--green-500);
@@ -587,15 +688,12 @@
             font-size: 14px;
         }
 
-        .placeholder {
-            background: #fef3c7;
-            border: 1px dashed #f59e0b;
-            border-radius: 6px;
-            padding: 4px 10px;
+        .budget-breakdown {
+            margin-top: 4px;
+            padding-left: 12px;
             font-size: 11px;
-            color: #92400e;
-            font-style: italic;
-            display: inline-block;
+            color: var(--gray-500);
+            line-height: 1.7;
         }
 
         /* Print / PDF button */
@@ -694,21 +792,23 @@
             .slides-nav,
             .print-btn,
             .nav,
+            .lang-toggle,
             div[style*="height:64px"] {
                 display: none !important;
             }
 
-            .org-chart, .org-card, .org-staff-card,
+            .org-chart, .org-card-head, .org-div-head, .org-staff-card,
             .kpi-card, .kpi-bar-fill,
             .issue-section, .q1-result-item,
             .status-badge, .projects-table th,
             .projects-table tr:nth-child(even) td,
-            .org-section-divider span {
+            .org-section-divider span, .org-division {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
 
-            .org-card .org-photo,
+            .org-card-head .org-photo,
+            .org-div-head .org-photo,
             .org-staff-card .org-photo {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
@@ -721,7 +821,7 @@
         }
     </style>
 </head>
-<body>
+<body class="lang-uz">
 
 <!-- Navigation (same as index.html) -->
 <nav class="nav" id="nav">
@@ -733,12 +833,18 @@
                     <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="11" font-weight="800" font-family="Inter, sans-serif">ITP</text>
                 </svg>
             </div>
-            <span>IT Park <span class="nav-divider">|</span> Стратегия ва таҳлил</span>
+            <span>IT Park <span class="nav-divider">|</span> <span class="lang-uz">Стратегия ва таҳлил</span><span class="lang-ru">Стратегия и анализ</span></span>
         </div>
         <div class="nav-links">
-            <a href="slides.html" class="nav-link active">Слайдлар</a>
-            <a href="index.html#plan" class="nav-link">2026 Иш режаси</a>
-            <a href="index.html#q1" class="nav-link">I чорак натижалари</a>
+            <a href="slides.html" class="nav-link active"><span class="lang-uz">Слайдлар</span><span class="lang-ru">Слайды</span></a>
+            <a href="index.html#plan" class="nav-link"><span class="lang-uz">2026 Иш режаси</span><span class="lang-ru">2026 Рабочий план</span></a>
+            <a href="index.html#q1" class="nav-link"><span class="lang-uz">I чорак натижалари</span><span class="lang-ru">Итоги I квартала</span></a>
+        </div>
+        <div class="nav-right">
+            <div class="lang-toggle">
+                <button id="lang-uz-btn" class="active" onclick="setLang('uz')">UZ</button>
+                <button id="lang-ru-btn" onclick="setLang('ru')">RU</button>
+            </div>
         </div>
     </div>
 </nav>
@@ -748,7 +854,7 @@
 <!-- Print / Download PDF Button -->
 <button class="print-btn" onclick="window.print()">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
-    Скачать PDF / Печать
+    <span class="lang-uz">PDF юклаш / Чоп этиш</span><span class="lang-ru">Скачать PDF / Печать</span>
 </button>
 
 <!-- Slide Navigation -->
@@ -759,153 +865,159 @@
 </div>
 
 <!-- ================================================================ -->
-<!-- SLIDE 1: ОБЩАЯ ИНФОРМАЦИЯ — ORG CHART -->
+<!-- SLIDE 1: ORG CHART -->
 <!-- ================================================================ -->
 <div class="slide" id="slide1">
     <div class="slide-header">
         <div class="slide-header-left">
             <div class="slide-number">1</div>
-            <h1>Общая информация о департаменте</h1>
+            <h1><span class="lang-uz">Департамент ҳақида умумий маълумот</span><span class="lang-ru">Общая информация о департаменте</span></h1>
         </div>
         <div class="slide-badge">IT Park Uzbekistan</div>
     </div>
 
     <div class="slide-body" style="padding: 20px 32px 24px;">
         <div class="org-chart">
-            <!-- Top row: Head + 2 Dept Heads -->
-            <div class="org-top-row">
-                <!-- Left: Иргашев Ботир -->
-                <div class="org-card">
-                    <img src="sources/botir.png" alt="Иргашев Ботир" class="org-photo">
-                    <div class="org-name">Иргашев Ботир</div>
-                    <div class="org-role">Начальник отдела свода информации,<br>зам. начальника Управления</div>
-                    <ul class="org-duties">
-                        <li>координация деятельности отдела</li>
-                        <li>ответственен за исполнение всех KPI отдела</li>
-                        <li>представление ежемесячной (12) и квартальной (4) сводной информации</li>
-                        <li>информационное сопровождение руководства</li>
-                    </ul>
-                </div>
-
-                <!-- Center: Исмоилов Ислом -->
-                <div class="org-card head">
+            <!-- TOP LEVEL: Исмоилов Ислом -->
+            <div class="org-head-wrapper">
+                <div class="org-card-head">
                     <img src="sources/islam.png" alt="Исмоилов Ислом" class="org-photo">
-                    <div class="org-name">Исмоилов Ислом</div>
-                    <div class="org-role">Начальник Управления</div>
+                    <div class="org-name"><span class="lang-uz">Исмоилов Ислом (С.Ф.Н.)</span><span class="lang-ru">Исмоилов Ислом (К.Ф.Н.)</span></div>
+                    <div class="org-role"><span class="lang-uz">Бошқарма бошлиғи</span><span class="lang-ru">Начальник Управления</span></div>
                     <ul class="org-duties">
-                        <li>координация деятельности отделов</li>
-                        <li>ответственен за исполнение всех KPI Управления</li>
-                    </ul>
-                </div>
-
-                <!-- Right: Эргашев Боходир -->
-                <div class="org-card">
-                    <img src="sources/baxodir.png" alt="Эргашев Боходир" class="org-photo">
-                    <div class="org-name">Эргашев Боходир</div>
-                    <div class="org-role">Начальник отдела стратегии и анализа</div>
-                    <ul class="org-duties">
-                        <li>24 аналитических записки (с отчётами) подготовка</li>
-                        <li>координация деятельности отдела</li>
-                        <li>ответственен за исполнение KPI Отдела</li>
+                        <li><span class="lang-uz">бўлимлар фаолиятини мувофиқлаштириш</span><span class="lang-ru">координация деятельности отделов</span></li>
+                        <li><span class="lang-uz">Бошқарманинг барча KPI бажарилиши учун масъул</span><span class="lang-ru">ответственен за исполнение всех KPI Управления</span></li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Two sections side by side -->
-            <div class="org-staff-sections">
+            <!-- Connector line -->
+            <div class="org-connector">
+                <div class="org-connector-line"></div>
+            </div>
+
+            <!-- Two divisions side by side -->
+            <div class="org-divisions">
                 <!-- LEFT: Отдел свода информации -->
-                <div>
+                <div class="org-division">
+                    <!-- Division head: Ботир -->
+                    <div class="org-div-head">
+                        <img src="sources/botir.png" alt="Иргашев Ботир" class="org-photo">
+                        <div class="org-name">Иргашев Ботир</div>
+                        <div class="org-role"><span class="lang-uz">Ахборотларни умумлаштириш бўлими бошлиғи,<br>Бошқарма бошлиғи ўринбосари</span><span class="lang-ru">Начальник отдела свода информации,<br>зам. начальника Управления</span></div>
+                        <ul class="org-duties">
+                            <li><span class="lang-uz">бўлим фаолиятини мувофиқлаштириш</span><span class="lang-ru">координация деятельности отдела</span></li>
+                            <li><span class="lang-uz">бўлимнинг барча KPI бажарилиши учун масъул</span><span class="lang-ru">ответственен за исполнение всех KPI отдела</span></li>
+                            <li><span class="lang-uz">ойлик (12) ва чораклик (4) умумлаштирилган маълумотларни тақдим этиш</span><span class="lang-ru">представление ежемесячной (12) и квартальной (4) сводной информации</span></li>
+                            <li><span class="lang-uz">раҳбариятни ахборот билан таъминлаш</span><span class="lang-ru">информационное сопровождение руководства</span></li>
+                        </ul>
+                    </div>
+
                     <div class="org-section-divider">
                         <div class="line"></div>
-                        <span>Отдел свода информации</span>
+                        <span><span class="lang-uz">Ходимлар</span><span class="lang-ru">Сотрудники</span></span>
                         <div class="line"></div>
                     </div>
+
                     <div class="org-staff-grid">
                         <div class="org-staff-card">
                             <img src="sources/sherzod.png" alt="Муминов Шерзод" class="org-photo">
                             <div class="org-name">Муминов Шерзод</div>
-                            <div class="org-role">Главный специалист</div>
+                            <div class="org-role"><span class="lang-uz">Бош мутахассис</span><span class="lang-ru">Главный специалист</span></div>
                             <ul class="org-duties">
-                                <li>свод данных от 16 подразделений IT Park</li>
-                                <li>ежемесячные и квартальные сводные отчёты</li>
+                                <li><span class="lang-uz">IT Park нинг 16 бўлинмасидан маълумотларни умумлаштириш</span><span class="lang-ru">свод данных от 16 подразделений IT Park</span></li>
+                                <li><span class="lang-uz">ойлик ва чораклик умумлаштирилган ҳисоботлар</span><span class="lang-ru">ежемесячные и квартальные сводные отчёты</span></li>
                             </ul>
                         </div>
                         <div class="org-staff-card">
                             <img src="sources/azamat.png" alt="Рахимбоев Азамат" class="org-photo">
                             <div class="org-name">Рахимбоев Азамат</div>
-                            <div class="org-role">Ведущий специалист</div>
+                            <div class="org-role"><span class="lang-uz">Етакчи мутахассис</span><span class="lang-ru">Ведущий специалист</span></div>
                             <ul class="org-duties">
-                                <li>свод данных от 16 подразделений IT Park</li>
-                                <li>ежемесячные и квартальные сводные отчёты</li>
+                                <li><span class="lang-uz">IT Park нинг 16 бўлинмасидан маълумотларни умумлаштириш</span><span class="lang-ru">свод данных от 16 подразделений IT Park</span></li>
+                                <li><span class="lang-uz">ойлик ва чораклик умумлаштирилган ҳисоботлар</span><span class="lang-ru">ежемесячные и квартальные сводные отчёты</span></li>
                             </ul>
                         </div>
                         <div class="org-staff-card">
                             <img src="sources/otabek.JPG" alt="Давронбеков Отабек" class="org-photo">
                             <div class="org-name">Давронбеков Отабек</div>
-                            <div class="org-role">Ведущий специалист</div>
+                            <div class="org-role"><span class="lang-uz">Етакчи мутахассис</span><span class="lang-ru">Ведущий специалист</span></div>
                             <ul class="org-duties">
-                                <li>единый банк данных: систематизация и формирование</li>
-                                <li>международные рейтинги и индексы</li>
+                                <li><span class="lang-uz">ягона маълумотлар банки: тизимлаштириш ва шакллантириш</span><span class="lang-ru">единый банк данных: систематизация и формирование</span></li>
+                                <li><span class="lang-uz">халқаро рейтинглар ва индекслар</span><span class="lang-ru">международные рейтинги и индексы</span></li>
                             </ul>
                         </div>
                         <div class="org-staff-card">
                             <img src="sources/nazerke.png" alt="Женисбекова Назерке" class="org-photo">
                             <div class="org-name">Женисбекова Назерке</div>
-                            <div class="org-role">Ведущий специалист</div>
+                            <div class="org-role"><span class="lang-uz">Етакчи мутахассис</span><span class="lang-ru">Ведущий специалист</span></div>
                             <ul class="org-duties">
-                                <li>подборка информации РУз по требованиям анализа</li>
-                                <li>данные рекомендациям международных организаций</li>
+                                <li><span class="lang-uz">таҳлил талабларига мувофиқ ЎзР маълумотларини танлаш</span><span class="lang-ru">подборка информации РУз по требованиям анализа</span></li>
+                                <li><span class="lang-uz">халқаро ташкилотлар тавсияларига оид маълумотлар</span><span class="lang-ru">данные рекомендациям международных организаций</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- RIGHT: Отдел стратегии и анализа -->
-                <div>
+                <div class="org-division">
+                    <!-- Division head: Боходир -->
+                    <div class="org-div-head">
+                        <img src="sources/baxodir.png" alt="Эргашев Боходир" class="org-photo">
+                        <div class="org-name">Эргашев Боходир</div>
+                        <div class="org-role"><span class="lang-uz">Стратегия ва таҳлил бўлими бошлиғи</span><span class="lang-ru">Начальник отдела стратегии и анализа</span></div>
+                        <ul class="org-duties">
+                            <li><span class="lang-uz">24 та таҳлилий қайдлар (ҳисоботлар билан) тайёрлаш</span><span class="lang-ru">24 аналитических записки (с отчётами) подготовка</span></li>
+                            <li><span class="lang-uz">бўлим фаолиятини мувофиқлаштириш</span><span class="lang-ru">координация деятельности отдела</span></li>
+                            <li><span class="lang-uz">бўлим KPI бажарилиши учун масъул</span><span class="lang-ru">ответственен за исполнение KPI Отдела</span></li>
+                        </ul>
+                    </div>
+
                     <div class="org-section-divider">
                         <div class="line"></div>
-                        <span>Отдел стратегии и анализа</span>
+                        <span><span class="lang-uz">Ходимлар</span><span class="lang-ru">Сотрудники</span></span>
                         <div class="line"></div>
                     </div>
+
                     <div class="org-staff-grid">
                         <div class="org-staff-card">
                             <img src="sources/axmad.png" alt="Ибрагимов Ахмад" class="org-photo">
                             <div class="org-name">Ибрагимов Ахмад</div>
-                            <div class="org-role">Главный специалист</div>
+                            <div class="org-role"><span class="lang-uz">Бош мутахассис</span><span class="lang-ru">Главный специалист</span></div>
                             <ul class="org-duties">
-                                <li>24 ИАЗ по IT (текущее состояние, деятельность гос. сектора, экспорт)</li>
-                                <li>20 справок по межд. отчетам</li>
-                                <li>1 проект по коммерциализации</li>
+                                <li><span class="lang-uz">24 та ИАҚ IT бўйича (ҳозирги ҳолат, давлат сектори фаолияти, экспорт)</span><span class="lang-ru">24 ИАЗ по IT (текущее состояние, деятельность гос. сектора, экспорт)</span></li>
+                                <li><span class="lang-uz">20 та халқаро ҳисоботлар бўйича маълумотнома</span><span class="lang-ru">20 справок по межд. отчетам</span></li>
+                                <li><span class="lang-uz">1 та тижоратлаштириш лойиҳаси</span><span class="lang-ru">1 проект по коммерциализации</span></li>
                             </ul>
                         </div>
                         <div class="org-staff-card">
                             <img src="sources/elyor.png" alt="Шухратов Эльёрбек" class="org-photo">
                             <div class="org-name">Шухратов Эльёрбек</div>
-                            <div class="org-role">Ведущий специалист</div>
+                            <div class="org-role"><span class="lang-uz">Етакчи мутахассис</span><span class="lang-ru">Ведущий специалист</span></div>
                             <ul class="org-duties">
-                                <li>52 подборки новостей, анализ IT сектора (бюллетень)</li>
-                                <li>обновление базы страновой информации (12 инд. по 75 странам)</li>
-                                <li>20 страновых справок</li>
+                                <li><span class="lang-uz">52 та янгиликлар тўплами, IT сектори таҳлили (бюллетень)</span><span class="lang-ru">52 подборки новостей, анализ IT сектора (бюллетень)</span></li>
+                                <li><span class="lang-uz">мамлакатлар маълумотлар базасини янгилаш (75 мамлакат бўйича 12 кўрсаткич)</span><span class="lang-ru">обновление базы страновой информации (12 инд. по 75 странам)</span></li>
+                                <li><span class="lang-uz">20 та мамлакат маълумотномалари</span><span class="lang-ru">20 страновых справок</span></li>
                             </ul>
                         </div>
                         <div class="org-staff-card">
                             <img src="sources/shuxrat.png" alt="Холмаматов Шухрат" class="org-photo">
                             <div class="org-name">Холмаматов Шухрат</div>
-                            <div class="org-role">Ведущий специалист</div>
+                            <div class="org-role"><span class="lang-uz">Етакчи мутахассис</span><span class="lang-ru">Ведущий специалист</span></div>
                             <ul class="org-duties">
-                                <li>5 технических и эксплуатационных документаций</li>
-                                <li>4 цифровых решения для работы с резидентами</li>
-                                <li>стратегия цифровизации и оптимизации</li>
+                                <li><span class="lang-uz">5 та техник ва эксплуатацион ҳужжатлар</span><span class="lang-ru">5 технических и эксплуатационных документаций</span></li>
+                                <li><span class="lang-uz">4 та резидентлар билан ишлаш учун рақамли ечимлар</span><span class="lang-ru">4 цифровых решения для работы с резидентами</span></li>
+                                <li><span class="lang-uz">рақамлаштириш ва оптималлаштириш стратегияси</span><span class="lang-ru">стратегия цифровизации и оптимизации</span></li>
                             </ul>
                         </div>
                         <div class="org-staff-card">
                             <img src="sources/shoxrux.png" alt="Сулейманов Шохрух" class="org-photo">
                             <div class="org-name">Сулейманов Шохрух</div>
-                            <div class="org-role">Ведущий специалист</div>
+                            <div class="org-role"><span class="lang-uz">Етакчи мутахассис</span><span class="lang-ru">Ведущий специалист</span></div>
                             <ul class="org-duties">
-                                <li>5 технических и эксплуатационных документаций</li>
-                                <li>4 цифровых решения по обмену информацией между отделами</li>
-                                <li>1 проект по коммерциализации</li>
+                                <li><span class="lang-uz">5 та техник ва эксплуатацион ҳужжатлар</span><span class="lang-ru">5 технических и эксплуатационных документаций</span></li>
+                                <li><span class="lang-uz">4 та бўлимлар ўртасида маълумот алмашиш учун рақамли ечимлар</span><span class="lang-ru">4 цифровых решения по обмену информацией между отделами</span></li>
+                                <li><span class="lang-uz">1 та тижоратлаштириш лойиҳаси</span><span class="lang-ru">1 проект по коммерциализации</span></li>
                             </ul>
                         </div>
                     </div>
@@ -922,115 +1034,115 @@
     <div class="slide-header">
         <div class="slide-header-left">
             <div class="slide-number">2</div>
-            <h1>Планы и KPI на 2026 год</h1>
+            <h1><span class="lang-uz">2026 йил учун режалар ва KPI</span><span class="lang-ru">Планы и KPI на 2026 год</span></h1>
         </div>
-        <div class="slide-badge">II квартал 2026</div>
+        <div class="slide-badge"><span class="lang-uz">II чорак 2026</span><span class="lang-ru">II квартал 2026</span></div>
     </div>
 
     <div class="slide-body">
         <!-- Q1 Results -->
-        <div class="kpi-section-title">I квартал 2026 — Результаты</div>
+        <div class="kpi-section-title"><span class="lang-uz">I чорак 2026 — Натижалар</span><span class="lang-ru">I квартал 2026 — Результаты</span></div>
         <div class="q1-results-grid">
             <div class="q1-result-item">
                 <span class="q1-num">11+</span>
-                <span class="q1-text">Аналитических исследований и отчётов</span>
+                <span class="q1-text"><span class="lang-uz">Таҳлилий тадқиқотлар ва ҳисоботлар</span><span class="lang-ru">Аналитических исследований и отчётов</span></span>
             </div>
             <div class="q1-result-item">
                 <span class="q1-num">12+</span>
-                <span class="q1-text">Материалов по международному сотрудничеству</span>
+                <span class="q1-text"><span class="lang-uz">Халқаро ҳамкорлик материаллари</span><span class="lang-ru">Материалов по международному сотрудничеству</span></span>
             </div>
             <div class="q1-result-item">
                 <span class="q1-num">11+</span>
-                <span class="q1-text">Баз данных, статистика и отчётов</span>
+                <span class="q1-text"><span class="lang-uz">Маълумотлар базаси, статистика ва ҳисоботлар</span><span class="lang-ru">Баз данных, статистика и отчётов</span></span>
             </div>
             <div class="q1-result-item">
                 <span class="q1-num">8+</span>
-                <span class="q1-text">Материалов по стратегическому развитию</span>
+                <span class="q1-text"><span class="lang-uz">Стратегик ривожланиш материаллари</span><span class="lang-ru">Материалов по стратегическому развитию</span></span>
             </div>
             <div class="q1-result-item">
                 <span class="q1-num">10+</span>
-                <span class="q1-text">Информационных бюллетеней</span>
+                <span class="q1-text"><span class="lang-uz">Ахборот бюллетенлари</span><span class="lang-ru">Информационных бюллетеней</span></span>
             </div>
             <div class="q1-result-item">
                 <span class="q1-num">52+</span>
-                <span class="q1-text">Всего подготовленных документов за I кв.</span>
+                <span class="q1-text"><span class="lang-uz">I чоракда тайёрланган жами ҳужжатлар</span><span class="lang-ru">Всего подготовленных документов за I кв.</span></span>
             </div>
         </div>
 
         <!-- KPI on 2026 -->
-        <div class="kpi-section-title">KPI на 2026 год</div>
+        <div class="kpi-section-title"><span class="lang-uz">2026 йил учун KPI</span><span class="lang-ru">KPI на 2026 год</span></div>
         <table class="projects-table">
             <thead>
                 <tr>
                     <th style="width: 5%;">&#8470;</th>
-                    <th style="width: 40%;">Направление / Проект</th>
-                    <th style="width: 20%;">Целевой срок</th>
-                    <th style="width: 25%;">Ожидаемый результат</th>
-                    <th style="width: 10%;">Статус</th>
+                    <th style="width: 40%;"><span class="lang-uz">Йўналиш / Лойиҳа</span><span class="lang-ru">Направление / Проект</span></th>
+                    <th style="width: 20%;"><span class="lang-uz">Мақсадли муддат</span><span class="lang-ru">Целевой срок</span></th>
+                    <th style="width: 25%;"><span class="lang-uz">Кутилаётган натижа</span><span class="lang-ru">Ожидаемый результат</span></th>
+                    <th style="width: 10%;"><span class="lang-uz">Ҳолат</span><span class="lang-ru">Статус</span></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>Опрос по IT-фрилансингу (1-е полугодие)</td>
-                    <td>II кв. 2026</td>
-                    <td>Отчёт по результатам опроса</td>
-                    <td><span class="status-badge progress">В работе</span></td>
+                    <td><span class="lang-uz">IT-фрилансинг бўйича сўровнома (1-ярим йиллик)</span><span class="lang-ru">Опрос по IT-фрилансингу (1-е полугодие)</span></td>
+                    <td><span class="lang-uz">II чорак 2026</span><span class="lang-ru">II кв. 2026</span></td>
+                    <td><span class="lang-uz">Сўровнома натижалари бўйича ҳисобот</span><span class="lang-ru">Отчёт по результатам опроса</span></td>
+                    <td><span class="status-badge progress"><span class="lang-uz">Жараёнда</span><span class="lang-ru">В работе</span></span></td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>Коммерциализация деятельности IT Park</td>
+                    <td><span class="lang-uz">IT Park фаолиятини тижоратлаштириш</span><span class="lang-ru">Коммерциализация деятельности IT Park</span></td>
                     <td>2026</td>
-                    <td>3 проекта по увеличению выручки</td>
-                    <td><span class="status-badge progress">В работе</span></td>
+                    <td><span class="lang-uz">Даромадни ошириш бўйича 2 та лойиҳа</span><span class="lang-ru">2 проекта по увеличению выручки</span></td>
+                    <td><span class="status-badge progress"><span class="lang-uz">Жараёнда</span><span class="lang-ru">В работе</span></span></td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>Концепция региональных IT-хабов 2026–2028</td>
-                    <td>III–IV кв. 2026</td>
-                    <td>Утверждённая концепция</td>
-                    <td><span class="status-badge planned">Планируется</span></td>
+                    <td><span class="lang-uz">Минтақавий IT-хаблар концепцияси 2026–2028</span><span class="lang-ru">Концепция региональных IT-хабов 2026–2028</span></td>
+                    <td><span class="lang-uz">III–IV чорак 2026</span><span class="lang-ru">III–IV кв. 2026</span></td>
+                    <td><span class="lang-uz">Тасдиқланган концепция</span><span class="lang-ru">Утверждённая концепция</span></td>
+                    <td><span class="status-badge planned"><span class="lang-uz">Режалаштирилмоқда</span><span class="lang-ru">Планируется</span></span></td>
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td>SWOT-анализ IT Park — годовой отчёт</td>
-                    <td>IV кв. 2026</td>
-                    <td>Годовой аналитический отчёт</td>
-                    <td><span class="status-badge planned">Планируется</span></td>
+                    <td><span class="lang-uz">IT Park SWOT-таҳлили — йиллик ҳисобот</span><span class="lang-ru">SWOT-анализ IT Park — годовой отчёт</span></td>
+                    <td><span class="lang-uz">IV чорак 2026</span><span class="lang-ru">IV кв. 2026</span></td>
+                    <td><span class="lang-uz">Йиллик таҳлилий ҳисобот</span><span class="lang-ru">Годовой аналитический отчёт</span></td>
+                    <td><span class="status-badge planned"><span class="lang-uz">Режалаштирилмоқда</span><span class="lang-ru">Планируется</span></span></td>
                 </tr>
             </tbody>
         </table>
 
         <!-- Annual KPI targets -->
-        <div class="kpi-section-title">Годовые целевые показатели — 2026</div>
+        <div class="kpi-section-title"><span class="lang-uz">2026 йил учун йиллик мақсадли кўрсаткичлар</span><span class="lang-ru">Годовые целевые показатели — 2026</span></div>
         <div class="kpi-grid">
             <div class="kpi-card">
-                <h4>Информационно-аналитические справки</h4>
-                <div class="kpi-target">Цель: 50+ | I кв. факт: ~20</div>
+                <h4><span class="lang-uz">Ахборот-таҳлилий маълумотномалар</span><span class="lang-ru">Информационно-аналитические справки</span></h4>
+                <div class="kpi-target"><span class="lang-uz">Мақсад: 50+ | I чорак факт: ~20</span><span class="lang-ru">Цель: 50+ | I кв. факт: ~20</span></div>
                 <div class="kpi-progress">
                     <div class="kpi-bar"><div class="kpi-bar-fill green" style="width: 40%"></div></div>
                     <span class="kpi-percent green">40%</span>
                 </div>
             </div>
             <div class="kpi-card">
-                <h4>Информационные справки</h4>
-                <div class="kpi-target">Цель: 100+ | I кв. факт: ~30</div>
+                <h4><span class="lang-uz">Ахборот маълумотномалари</span><span class="lang-ru">Информационные справки</span></h4>
+                <div class="kpi-target"><span class="lang-uz">Мақсад: 100+ | I чорак факт: ~30</span><span class="lang-ru">Цель: 100+ | I кв. факт: ~30</span></div>
                 <div class="kpi-progress">
                     <div class="kpi-bar"><div class="kpi-bar-fill green" style="width: 30%"></div></div>
                     <span class="kpi-percent green">30%</span>
                 </div>
             </div>
             <div class="kpi-card">
-                <h4>Информационные бюллетени</h4>
-                <div class="kpi-target">Цель: 52 | I кв. факт: ~13</div>
+                <h4><span class="lang-uz">Ахборот бюллетенлари</span><span class="lang-ru">Информационные бюллетени</span></h4>
+                <div class="kpi-target"><span class="lang-uz">Мақсад: 52 | I чорак факт: ~13</span><span class="lang-ru">Цель: 52 | I кв. факт: ~13</span></div>
                 <div class="kpi-progress">
                     <div class="kpi-bar"><div class="kpi-bar-fill green" style="width: 25%"></div></div>
                     <span class="kpi-percent green">25%</span>
                 </div>
             </div>
             <div class="kpi-card">
-                <h4>Проекты по коммерциализации</h4>
-                <div class="kpi-target">Цель: 3 проекта | I кв. факт: <span class="placeholder">уточнить</span></div>
+                <h4><span class="lang-uz">Тижоратлаштириш лойиҳалари</span><span class="lang-ru">Проекты по коммерциализации</span></h4>
+                <div class="kpi-target"><span class="lang-uz">Мақсад: 2 та лойиҳа | I чорак факт: аниқлаштирилмоқда</span><span class="lang-ru">Цель: 2 проекта | I кв. факт: уточняется</span></div>
                 <div class="kpi-progress">
                     <div class="kpi-bar"><div class="kpi-bar-fill yellow" style="width: 15%"></div></div>
                     <span class="kpi-percent yellow">15%</span>
@@ -1047,9 +1159,9 @@
     <div class="slide-header">
         <div class="slide-header-left">
             <div class="slide-number">3</div>
-            <h1>Открытые вопросы и дополнительная информация</h1>
+            <h1><span class="lang-uz">Очиқ масалалар ва қўшимча маълумот</span><span class="lang-ru">Открытые вопросы и дополнительная информация</span></h1>
         </div>
-        <div class="slide-badge">Требуют решения</div>
+        <div class="slide-badge"><span class="lang-uz">Ечим талаб қилади</span><span class="lang-ru">Требуют решения</span></div>
     </div>
 
     <div class="slide-body">
@@ -1058,11 +1170,12 @@
             <div class="issue-section questions">
                 <h3>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
-                    Вопросы, требующие рассмотрения руководством
+                    <span class="lang-uz">Раҳбарият кўриб чиқиши лозим бўлган масалалар</span><span class="lang-ru">Вопросы, требующие рассмотрения руководством</span>
                 </h3>
                 <ul>
-                    <li><span class="placeholder">Пожалуйста, укажите вопросы, требующие решения со стороны руководства</span></li>
-                    <li><span class="placeholder">Например: согласование стратегии, утверждение бюджета, и т.д.</span></li>
+                    <li><span class="lang-uz">Бўлимни очиқ офис (open-space) дан алоҳида ёпиқ хонага кўчириш масаласи</span><span class="lang-ru">Просьба о переезде департамента из open-space в отдельное закрытое помещение</span></li>
+                    <li><span class="lang-uz">Ушбу хонани тегишли равишда жиҳозлаш (мебель, техника, оргтехника)</span><span class="lang-ru">Просьба о надлежащем оснащении (меблировке) данного помещения</span></li>
+                    <li><span class="lang-uz">Сабаблар: бўлим махфий таҳлилий маълумотлар билан ишлайди; стратегик ғоялар муҳокамаси ва бриффинглар пайтида ахборот очиқ офисда бошқа бўлимларга сизиб чиқиши мумкин; таҳлилий вазифалар учун жамланган иш муҳити зарур</span><span class="lang-ru">Причины: департамент работает с конфиденциальными аналитическими данными; при проведении мозговых штурмов и обсуждении стратегических идей в open-space информация может утечь в другие подразделения; необходима сосредоточенная рабочая среда для выполнения аналитических задач</span></li>
                 </ul>
             </div>
 
@@ -1070,11 +1183,12 @@
             <div class="issue-section risks">
                 <h3>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"/></svg>
-                    Риски, ограничения и сдерживающие факторы
+                    <span class="lang-uz">Хавфлар ва чекловлар</span><span class="lang-ru">Риски, ограничения и сдерживающие факторы</span>
                 </h3>
                 <ul>
-                    <li><span class="placeholder">Укажите существующие риски, влияющие на выполнение KPI</span></li>
-                    <li><span class="placeholder">Например: нехватка кадров, задержки в согласованиях, зависимость от внешних данных</span></li>
+                    <li><span class="lang-uz">Очиқ офисда махфий маълумотлар хавфсизлигини таъминлашнинг имкони чекланган</span><span class="lang-ru">Ограниченные возможности обеспечения безопасности конфиденциальных данных в open-space</span></li>
+                    <li><span class="lang-uz">Ташқи маълумотларга боғлиқлик ва келишувларда кечикишлар</span><span class="lang-ru">Зависимость от внешних данных и задержки в согласованиях</span></li>
+                    <li><span class="lang-uz">IT Park нинг 9 та бошқарма/бўлимига операцион фаолиятни таҳлил қилиш ва такомиллаштириш мақсадида сўровнома юборилди — фақат 2 тасигина жавоб қайтарди (22%). Бу бўлимлараро ҳамкорлик ва маълумот алмашинувининг паст даражада эканлигини кўрсатади</span><span class="lang-ru">Из 9 департаментов/отделов IT Park, которым была направлена анкета для анализа и улучшения операционной деятельности, ответили только 2 (22%). Это свидетельствует о низком уровне межведомственного взаимодействия и обмена информацией</span></li>
                 </ul>
             </div>
 
@@ -1082,13 +1196,31 @@
             <div class="issue-section needs">
                 <h3>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
-                    Потребности в ресурсах и поддержке
+                    <span class="lang-uz">Ресурсларга бўлган эҳтиёж</span><span class="lang-ru">Потребности в ресурсах и поддержке</span>
                 </h3>
                 <ul>
-                    <li><strong>Бюджет $200</strong> — домен и хостинг для IT-проектов</li>
-                    <li><strong>Бюджет 1,2 млрд сум</strong> — опрос по IT-фрилансингу (1-е полугодие), II кв. 2026, отчёт по результатам опроса</li>
-                    <li><span class="placeholder">Укажите потребности в кадровых ресурсах (вакансии, новые позиции)</span></li>
-                    <li><span class="placeholder">Укажите потребности в согласованиях или организационной поддержке</span></li>
+                    <li><strong><span class="lang-uz">Бюджет $200</span><span class="lang-ru">Бюджет $200</span></strong> — <span class="lang-uz">IT-лойиҳалар учун домен ва хостинг</span><span class="lang-ru">домен и хостинг для IT-проектов</span></li>
+                    <li><strong><span class="lang-uz">Бюджет 1,2 млрд сўм</span><span class="lang-ru">Бюджет 1,2 млрд сум</span></strong> — <span class="lang-uz">IT-фрилансинг бўйича сўровнома (1-ярим йиллик), II чорак 2026, сўровнома натижалари бўйича ҳисобот</span><span class="lang-ru">опрос по IT-фрилансингу (1-е полугодие), II кв. 2026, отчёт по результатам опроса</span></li>
+                    <li>
+                        <strong><span class="lang-uz">Бюджет ~$3 840/йил</span><span class="lang-ru">Бюджет ~$3 840/год</span></strong> — <span class="lang-uz">Сунъий интеллект воситалари учун йиллик MAX обуналар</span><span class="lang-ru">Годовые подписки MAX на инструменты ИИ</span>
+                        <div class="budget-breakdown">
+                            ChatGPT Pro: $200/<span class="lang-uz">ой</span><span class="lang-ru">мес</span> = $2 400/<span class="lang-uz">йил</span><span class="lang-ru">год</span><br>
+                            Claude Max: $100/<span class="lang-uz">ой</span><span class="lang-ru">мес</span> = $1 200/<span class="lang-uz">йил</span><span class="lang-ru">год</span><br>
+                            Gemini Advanced: $20/<span class="lang-uz">ой</span><span class="lang-ru">мес</span> = $240/<span class="lang-uz">йил</span><span class="lang-ru">год</span>
+                        </div>
+                    </li>
+                    <li>
+                        <strong><span class="lang-uz">Бюджет ~$6 925/йил</span><span class="lang-ru">Бюджет ~$6 925/год</span></strong> — <span class="lang-uz">Таҳлилий нашрларга йиллик обуна</span><span class="lang-ru">Годовые подписки на аналитические издания</span>
+                        <div class="budget-breakdown">
+                            The Economist (Digital): ~$190/<span class="lang-uz">йил</span><span class="lang-ru">год</span><br>
+                            Financial Times (Premium): ~$500/<span class="lang-uz">йил</span><span class="lang-ru">год</span><br>
+                            Bloomberg (Digital Access): ~$415/<span class="lang-uz">йил</span><span class="lang-ru">год</span><br>
+                            Reuters (Professional): ~$420/<span class="lang-uz">йил</span><span class="lang-ru">год</span><br>
+                            The Information: ~$400/<span class="lang-uz">йил</span><span class="lang-ru">год</span><br>
+                            Gartner (Research): ~$2 500/<span class="lang-uz">йил</span><span class="lang-ru">год</span><br>
+                            Forrester (Research): ~$2 500/<span class="lang-uz">йил</span><span class="lang-ru">год</span>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -1096,9 +1228,27 @@
 </div>
 
 <script>
+// Language toggle
+function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.getElementById('lang-uz-btn').classList.toggle('active', lang === 'uz');
+    document.getElementById('lang-ru-btn').classList.toggle('active', lang === 'ru');
+    try { localStorage.setItem('slides-lang', lang); } catch(e) {}
+}
+
+// Restore saved language
+(function() {
+    try {
+        var saved = localStorage.getItem('slides-lang');
+        if (saved === 'ru' || saved === 'uz') {
+            setLang(saved);
+        }
+    } catch(e) {}
+})();
+
 // Nav scroll effect
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', function() {
     nav.classList.toggle('scrolled', window.scrollY > 20);
 });
 
@@ -1106,18 +1256,18 @@ window.addEventListener('scroll', () => {
 const slideNav = document.querySelectorAll('.slides-nav a');
 const slides = document.querySelectorAll('.slide');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-            const id = entry.target.id;
-            slideNav.forEach(a => {
+            var id = entry.target.id;
+            slideNav.forEach(function(a) {
                 a.classList.toggle('active', a.getAttribute('href') === '#' + id);
             });
         }
     });
 }, { threshold: 0.3 });
 
-slides.forEach(s => observer.observe(s));
+slides.forEach(function(s) { observer.observe(s); });
 </script>
 
 </body>
