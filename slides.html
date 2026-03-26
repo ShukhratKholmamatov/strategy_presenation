@@ -322,7 +322,9 @@
         .org-divisions {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            grid-template-rows: auto auto auto;
+            column-gap: 24px;
+            row-gap: 0;
         }
 
         .org-division {
@@ -330,6 +332,10 @@
             border-radius: 14px;
             padding: 20px;
             border: 1px solid var(--gray-200);
+            grid-row: 1 / 4;
+            display: grid;
+            grid-template-rows: subgrid;
+            align-items: start;
         }
 
         /* Division head card */
@@ -416,7 +422,9 @@
         .org-staff-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            grid-auto-rows: 1fr;
             gap: 14px;
+            align-self: stretch;
         }
 
         .org-staff-card {
