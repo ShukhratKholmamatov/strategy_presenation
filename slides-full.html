@@ -674,7 +674,7 @@
         }
 
         .issue-section.questions ul li::before {
-            content: '?';
+            content: '\2022';
             position: absolute;
             left: 0;
             font-weight: 800;
@@ -1135,11 +1135,11 @@
                         <li><span class="lang-uz"><strong>12</strong> ой ичида маҳаллий стартаплар «<strong>VR Capital</strong>», «<strong>inSight Ventures</strong>», «<strong>Avenue Growth Partners</strong>», «<strong>DST Global Partners</strong>» ва «<strong>Goodwater Capital</strong>» каби Америка жамғармаларидан <strong>80 млн АҚШ доллардан</strong> ортиқ инвестиция жалб қилди.</span><span class="lang-ru">За <strong>12</strong> месяцев стартапы привлекли более <strong>$80 млн</strong> от американских фондов.</span></li>
                     </ul>
 
-                    <p style="margin-bottom: 6px;"><strong>2.</strong> <span class="lang-uz">«<strong>THE UZBEKISTAN'S ITES HANDBOOK</strong>» ахборот-таҳлилий маълумотномасида <strong>30</strong> дан <strong>ортиқ</strong> асоссиз ёки эскирган маълумотлар тўпламлари ва <strong>20</strong> дан зиёд имловий хатоликлар аниқланди. Масалан:</span><span class="lang-ru">В справке «<strong>THE UZBEKISTAN'S ITES HANDBOOK</strong>» выявлено более <strong>30</strong> необоснованных или устаревших данных и более <strong>20</strong> орфографических ошибок. Например:</span></p>
+                    <p style="margin-bottom: 6px;"><strong>2.</strong> <span class="lang-uz">«<strong>THE UZBEKISTAN'S ITES HANDBOOK</strong>» ахборот-таҳлилий маълумотномасида <strong>60</strong> га яқин хато аниқланди (<em>38 асоссиз ёки эскирган маълумотлар тўплами ва 19 имловий хатоликлар</em>). Масалан:</span><span class="lang-ru">В справке «<strong>THE UZBEKISTAN'S ITES HANDBOOK</strong>» выявлено около <strong>60</strong> ошибок (<em>38 необоснованных или устаревших данных и 19 орфографических ошибок</em>). Например:</span></p>
                     <ul style="list-style: disc; padding-left: 16px;">
                         <li style="margin-bottom: 4px;"><span class="lang-uz"><strong>11 бет:</strong> дунё бўйлаб ўзбек тили фойдаланувчилари сони <strong>25 млн</strong> дан зиёдлиги белгиланган, амалда эса – <strong>50 млн</strong> дан зиёд (манба: «Ҳалқ сўзи» 26.06.2021);</span><span class="lang-ru"><strong>стр. 11:</strong> указано <strong>25 млн</strong> пользователей узбекского языка, фактически — более <strong>50 млн</strong>;</span></li>
                         <li style="margin-bottom: 4px;"><span class="lang-uz"><strong>12 бет:</strong> EBRD (Европа тикланиш ва тараққиёт банки)нинг жами инвестициялари миқдори <strong>3 млрд</strong> еврони ташкил этган, амалда эса – <strong>5,9 млрд</strong> (манба: www.ebrd.com);</span><span class="lang-ru"><strong>стр. 12:</strong> указано <strong>€3 млрд</strong> инвестиций EBRD, фактически — <strong>€5,9 млрд</strong>;</span></li>
-                        <li><span class="lang-uz"><strong>19 бет:</strong> тўғридан-тўғри хорижий инвестициялар миқдори долзарб эмас ва эскирган маълумотларга асосланган (2024 йилда 11,9 млрд АҚШ доллари), амалдаги долзарб маълумотга асосан эса – <strong>2025 йилда 43,1 млрд</strong> (манба: Инвестиция, саноат ва савдо вазирлиги)</span><span class="lang-ru"><strong>стр. 19:</strong> данные об ПИИ устарели ($11,9 млрд в 2024), актуальные — <strong>$43,1 млрд в 2025</strong>.</span></li>
+                        <li><span class="lang-uz"><strong>19 бет</strong> – долзарб эмас маълумотлар: <strong>2024 й.</strong> хорижий инвестициялар миқдори – 11,9 млрд АҚШ доллари, амалдаги долзарб маълумот – <strong>2025 й. 33,5 млрд</strong> (манба: Миллий статистика қўмитаси).</span><span class="lang-ru"><strong>стр. 19</strong> — устаревшие данные: ПИИ в <strong>2024 г.</strong> — $11,9 млрд, актуальные данные — <strong>$33,5 млрд в 2025 г.</strong> (источник: Национальный комитет статистики).</span></li>
                     </ul>
                 </div>
             </div>
@@ -1360,10 +1360,10 @@
     </div>
 
     <div class="slide-body" style="padding: 18px 32px 24px;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto 1fr; gap: 14px;">
 
-            <!-- COL 1: Хавфлар ва чекловлар -->
-            <div class="issue-section risks" style="padding: 14px 16px;">
+            <!-- COL 1: Хавфлар ва чекловлар (spans both rows) -->
+            <div class="issue-section risks" style="padding: 14px 16px; grid-row: 1 / 3;">
                 <h3 style="font-size: 13px; margin-bottom: 8px;">
                     <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: var(--green-500); color: white; border-radius: 50%; font-size: 13px; font-weight: 700; margin-right: 6px;">1</span>
                     <span class="lang-uz">Хавфлар ва чекловлар</span><span class="lang-ru">Риски и ограничения</span>
@@ -1405,56 +1405,85 @@
                 </table>
             </div>
 
-            <!-- COL 2: Ресурслар + Open-space -->
-            <div style="display: flex; flex-direction: column; gap: 14px;">
-                <!-- Ресурсларга бўлган эҳтиёжлар -->
-                <div class="issue-section needs" style="padding: 14px 16px; flex: 1;">
-                    <h3 style="font-size: 13px; margin-bottom: 8px;">
-                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: var(--green-500); color: white; border-radius: 50%; font-size: 13px; font-weight: 700; margin-right: 6px;">2</span>
-                        <span class="lang-uz">Ресурсларга бўлган эҳтиёжлар</span><span class="lang-ru">Потребности в ресурсах</span>
-                    </h3>
-                    <div style="font-size: 11.5px; color: var(--gray-700); line-height: 1.65;">
-                        <p style="margin-bottom: 6px;">
-                            <span class="lang-uz">1. IT-лойиҳаларга домен ва хостинг хизматлари учун маблағлар (учинчи томон хизматларидан фойдаланганда бюджет – <strong>4 млн сўм</strong>, ёки муқобил ечимлар).</span>
-                            <span class="lang-ru">1. Средства на домен и хостинг для IT-проектов (при использовании сторонних сервисов бюджет — <strong>4 млн сум</strong>, или альтернативные решения).</span>
-                        </p>
-                        <p style="margin-bottom: 6px;">
-                            <span class="lang-uz">2. <strong>Статистика қўмитаси</strong> кўмаги билан IT-фрилансинг бўйича <strong>I ва II ярим йиллик</strong> учун сўровнома ўтказиш ва сўровнома натижалари бўйича ҳисобот тайёрлаш (бюджет – <strong>2,4 млрд сўм</strong>).</span>
-                            <span class="lang-ru">2. Проведение опроса по IT-фрилансингу за <strong>I и II полугодие</strong> при содействии <strong>Комитета статистики</strong> и подготовка отчёта (бюджет — <strong>2,4 млрд сум</strong>).</span>
-                        </p>
-                        <p style="margin-bottom: 6px;">
-                            <span class="lang-uz">3. Сунъий интеллект воситалари учун йиллик юқори поғонали обуналар (<em>ChatGPT Pro, Claude Max, Gemini Ultra</em>. Бюджет – <strong>108 млн сўм</strong>).</span>
-                            <span class="lang-ru">3. Годовые подписки на инструменты ИИ (<em>ChatGPT Pro, Claude Max, Gemini Ultra</em>. Бюджет — <strong>108 млн сум</strong>).</span>
-                        </p>
-                        <p style="margin-bottom: 8px;">
-                            <span class="lang-uz">4. Таҳлилий нашрларга йиллик обуна (<em>The Economist, Financial Times, Bloomberg, Reuters, The Information</em>. Бюджет – <strong>14 млн сўм</strong>).</span>
-                            <span class="lang-ru">4. Годовые подписки на аналитические издания (<em>The Economist, Financial Times, Bloomberg, Reuters, The Information</em>. Бюджет — <strong>14 млн сум</strong>).</span>
-                        </p>
-                        <p style="font-size: 12px; font-weight: 700; color: var(--green-700); padding-top: 6px; border-top: 1.5px solid var(--green-200);">
-                            <span class="lang-uz">Жами: <strong>2,5 млрд сўм</strong> (тахминан <strong>207 минг АҚШ доллари</strong>)</span>
-                            <span class="lang-ru">Итого: <strong>2,5 млрд сум</strong> (примерно <strong>$207 тыс.</strong>)</span>
-                        </p>
-                    </div>
-                </div>
+            <!-- COL 2: Ресурслар table -->
+            <div class="issue-section needs" style="padding: 14px 16px;">
+                <h3 style="font-size: 13px; margin-bottom: 8px;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: var(--green-500); color: white; border-radius: 50%; font-size: 13px; font-weight: 700; margin-right: 6px;">2</span>
+                    <span class="lang-uz">Ресурсларга бўлган эҳтиёжлар</span><span class="lang-ru">Потребности в ресурсах</span>
+                </h3>
+                <table style="width: 100%; border-collapse: collapse; font-size: 10px; margin-bottom: 6px;">
+                    <thead>
+                        <tr>
+                            <th style="background: var(--green-500); color: white; padding: 4px 6px; text-align: center; font-size: 9px; border-radius: 4px 0 0 0; width: 28px;"><span class="lang-uz">Т/р</span><span class="lang-ru">&#8470;</span></th>
+                            <th style="background: var(--green-500); color: white; padding: 4px 6px; text-align: left; font-size: 9px;"><span class="lang-uz">Хизмат/маҳсулот номи</span><span class="lang-ru">Наименование услуги/продукта</span></th>
+                            <th style="background: var(--green-500); color: white; padding: 4px 6px; text-align: center; font-size: 9px; border-radius: 0 4px 0 0; width: 65px;"><span class="lang-uz">Нархи (сўм)</span><span class="lang-ru">Стоимость (сум)</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="padding: 3px 6px; border-bottom: 1px solid var(--gray-200); text-align: center;">1</td><td style="padding: 3px 6px; border-bottom: 1px solid var(--gray-200);"><span class="lang-uz">IT-лойиҳаларга домен ва хостинг хизматлари</span><span class="lang-ru">Домен и хостинг для IT-проектов</span></td><td style="padding: 3px 6px; border-bottom: 1px solid var(--gray-200); text-align: center; font-weight: 600;">4 млн</td></tr>
+                        <tr style="background: var(--gray-50);"><td style="padding: 3px 6px; border-bottom: 1px solid var(--gray-200); text-align: center;">2</td><td style="padding: 3px 6px; border-bottom: 1px solid var(--gray-200);"><span class="lang-uz">IT-фрилансинг бўйича сўровнома ўтказиш ва ҳисобот тайёрлаш</span><span class="lang-ru">Проведение опроса по IT-фрилансингу и подготовка отчёта</span></td><td style="padding: 3px 6px; border-bottom: 1px solid var(--gray-200); text-align: center; font-weight: 600;">2,4 млрд</td></tr>
+                        <tr><td style="padding: 3px 6px; border-bottom: 1px solid var(--gray-200); text-align: center;">3</td><td style="padding: 3px 6px; border-bottom: 1px solid var(--gray-200);"><span class="lang-uz">Сунъий интеллект воситаларига йиллик обуна (ChatGPT Pro, Claude Max, Gemini Ultra)</span><span class="lang-ru">Годовая подписка на ИИ (ChatGPT Pro, Claude Max, Gemini Ultra)</span></td><td style="padding: 3px 6px; border-bottom: 1px solid var(--gray-200); text-align: center; font-weight: 600;">108 млн</td></tr>
+                        <tr style="background: var(--gray-50);"><td style="padding: 3px 6px; border-bottom: 1px solid var(--gray-200); text-align: center;">4</td><td style="padding: 3px 6px; border-bottom: 1px solid var(--gray-200);"><span class="lang-uz">Таҳлилий нашрларга йиллик обуна (The Economist, Financial Times, Bloomberg, Reuters, The Information)</span><span class="lang-ru">Годовая подписка на аналитические издания (The Economist, Financial Times, Bloomberg, Reuters, The Information)</span></td><td style="padding: 3px 6px; border-bottom: 1px solid var(--gray-200); text-align: center; font-weight: 600;">14 млн</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan="2" style="padding: 4px 6px; font-weight: 700; text-align: right; font-size: 10.5px; color: var(--green-700);"><span class="lang-uz">ЖАМИ</span><span class="lang-ru">ИТОГО</span></td><td style="padding: 4px 6px; text-align: center; font-weight: 700; font-size: 10.5px; color: var(--green-700);">2,526 млрд</td></tr>
+                    </tfoot>
+                </table>
+            </div>
 
-                <!-- Open-space section -->
-                <div class="issue-section questions" style="padding: 14px 16px;">
-                    <h3 style="font-size: 13px; margin-bottom: 8px;">
-                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: var(--green-500); color: white; border-radius: 50%; font-size: 13px; font-weight: 700; margin-right: 6px;">3</span>
-                        <span class="lang-uz">Таҳлилий фаолият учун open-space'дан алоҳида ёпиқ хонага кўчиш заруратиь</span>
-                        <span class="lang-ru">Необходимость переезда из open-space в отдельное закрытое помещение</span>
-                    </h3>
-                    <div style="font-size: 11.5px; color: var(--gray-700); line-height: 1.65;">
-                        <p style="margin-bottom: 6px;">
-                            <span class="lang-uz">Бошқарма иш фаолиятидан келиб чиқиб, қуйидагиларни инобатга олиш зарур:</span>
-                            <span class="lang-ru">Исходя из деятельности Управления, необходимо учитывать следующее:</span>
-                        </p>
-                        <ul style="list-style: disc; padding-left: 16px;">
-                            <li><span class="lang-uz">махфий таҳлилий маълумотлар билан ишланиши;</span><span class="lang-ru">работа с конфиденциальными аналитическими данными;</span></li>
-                            <li><span class="lang-uz">стратегик ғоялар муҳокамаси;</span><span class="lang-ru">обсуждение стратегических идей;</span></li>
-                            <li><span class="lang-uz">брифинглар пайтида ахборот сизиб чиқиши эҳтимоли;</span><span class="lang-ru">вероятность утечки информации во время брифингов;</span></li>
-                            <li><span class="lang-uz">таҳлилий вазифалар учун жамланган иш муҳитига бўлган эҳтиёж.</span><span class="lang-ru">необходимость сосредоточенной рабочей среды для аналитических задач.</span></li>
-                        </ul>
+            <!-- COL 3: Ёпиқ хона (row 1) -->
+            <div class="issue-section questions" style="padding: 14px 16px;">
+                <h3 style="font-size: 13px; margin-bottom: 8px;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: var(--green-500); color: white; border-radius: 50%; font-size: 13px; font-weight: 700; margin-right: 6px;">3</span>
+                    <span class="lang-uz">Таҳлилий фаолият учун алоҳида ёпиқ хона</span>
+                    <span class="lang-ru">Отдельное закрытое помещение для аналитической деятельности</span>
+                </h3>
+                <div style="font-size: 11.5px; color: var(--gray-700); line-height: 1.65;">
+                    <p style="margin-bottom: 6px;">
+                        <span class="lang-uz">Бошқарманинг иш фаолиятидан келиб чиқиб, қуйидагиларни инобатга ҳолда алоҳида ёпиқ хонага кўчиш зарур:</span>
+                        <span class="lang-ru">Исходя из деятельности Управления, необходим переезд в отдельное закрытое помещение с учётом следующего:</span>
+                    </p>
+                    <ul style="list-style: disc; padding-left: 16px;">
+                        <li><span class="lang-uz">хос таҳлилий маълумотлар билан ишланиши;</span><span class="lang-ru">работа с конфиденциальными аналитическими данными;</span></li>
+                        <li><span class="lang-uz">стратегик ғоялар муҳокамаси;</span><span class="lang-ru">обсуждение стратегических идей;</span></li>
+                        <li><span class="lang-uz">брифинглар пайтида ахборот сизиб чиқиши эҳтимоли;</span><span class="lang-ru">вероятность утечки информации во время брифингов;</span></li>
+                        <li><span class="lang-uz">таҳлилий вазифалар учун жамланган иш муҳитига бўлган эҳтиёж.</span><span class="lang-ru">необходимость сосредоточенной рабочей среды для аналитических задач.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Кадрлар захирасини ошириш (row 2, spans columns 2-3) -->
+            <div class="issue-section" style="padding: 16px 20px; background: var(--white); border: 1.5px solid var(--green-200); border-radius: 12px; grid-column: 2 / 4;">
+                <h3 style="font-size: 14px; margin-bottom: 12px; text-align: center; color: var(--green-700); font-weight: 700;">
+                    <span class="lang-uz">Кадрлар захирасини ошириш</span>
+                    <span class="lang-ru">Усиление кадрового резерва</span>
+                </h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <!-- Candidate 1 -->
+                    <div style="display: flex; align-items: flex-start; gap: 14px; border: 1.5px solid var(--green-200); border-radius: 12px; padding: 14px;">
+                        <img src="sources/boburjon.jpg" alt="Файзирахмонов Бобуржон" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid var(--green-200); flex-shrink: 0;">
+                        <div>
+                            <div style="font-size: 13px; font-weight: 700; color: var(--gray-900); margin-bottom: 6px;">Файзирахмонов Бобуржон</div>
+                            <div style="font-size: 10px; color: var(--gray-600); line-height: 1.6;">
+                                <p><strong><span class="lang-uz">Ёши</span><span class="lang-ru">Возраст</span></strong> &nbsp;29</p>
+                                <p><strong><span class="lang-uz">Мутахассислиги</span><span class="lang-ru">Специализация</span></strong> &nbsp;<span class="lang-uz">Ахборот хавфсизлиги, криптография ва таҳлил (магистр)</span><span class="lang-ru">Информационная безопасность, криптография и анализ (магистр)</span></p>
+                                <p><strong><span class="lang-uz">Тажрибаси</span><span class="lang-ru">Опыт</span></strong> &nbsp;<span class="lang-uz">6 й. (давлат ташкилотларида)</span><span class="lang-ru">6 лет (в гос. организациях)</span></p>
+                                <p><strong><span class="lang-uz">Ҳозирги вақтда</span><span class="lang-ru">В настоящее время</span></strong> &nbsp;<span class="lang-uz">"АгроБанк" АТБ Ахборот хавфсизлиги департаменти кибер­хавфсизлик бўйича мутахассиси</span><span class="lang-ru">Специалист по кибербезопасности департамента ИБ АКБ «АгроБанк»</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Candidate 2 -->
+                    <div style="display: flex; align-items: flex-start; gap: 14px; border: 1.5px solid var(--green-200); border-radius: 12px; padding: 14px;">
+                        <img src="sources/emel.png" alt="Асанов Эмель" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid var(--green-200); flex-shrink: 0;">
+                        <div>
+                            <div style="font-size: 13px; font-weight: 700; color: var(--gray-900); margin-bottom: 6px;">Асанов Эмель</div>
+                            <div style="font-size: 10px; color: var(--gray-600); line-height: 1.6;">
+                                <p><strong><span class="lang-uz">Ёши</span><span class="lang-ru">Возраст</span></strong> &nbsp;40</p>
+                                <p><strong><span class="lang-uz">Мутахассислиги</span><span class="lang-ru">Специализация</span></strong> &nbsp;<span class="lang-uz">Ахборот-таҳлил, молия (магистр)</span><span class="lang-ru">Информационный анализ, финансы (магистр)</span></p>
+                                <p><strong><span class="lang-uz">Тажрибаси</span><span class="lang-ru">Опыт</span></strong> &nbsp;<span class="lang-uz">17 й. (давлат ташкилотларида)</span><span class="lang-ru">17 лет (в гос. организациях)</span></p>
+                                <p><strong><span class="lang-uz">Ҳозирги вақтда</span><span class="lang-ru">В настоящее время</span></strong> &nbsp;<span class="lang-uz">Ўзбекистон Республикаси Тоғ-кон саноати ва геология вазирлиги Жамланма ахборот-таҳлил ва халқаро тажрибани Ўрганиш бошқармаси бош мутахассиси</span><span class="lang-ru">Главный специалист Управления сводного информационно-аналитического и изучения международного опыта Министерства горнодобывающей промышленности и геологии РУз</span></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

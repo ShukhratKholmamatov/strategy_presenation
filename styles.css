@@ -1,3 +1,7 @@
+/* ===== LANGUAGE TOGGLE ===== */
+body.lang-uz .lang-ru { display: none; }
+body.lang-ru .lang-uz { display: none; }
+
 /* ===== RESET & BASE ===== */
 *, *::before, *::after {
     margin: 0;
